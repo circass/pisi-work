@@ -1,0 +1,28 @@
+commit 2783658477205b0cf31e5c02d69214e36fe59aae
+Author: Axel Lin <axel.lin@gmail.com>
+Date:   Mon Mar 14 18:56:18 2011 +0800
+
+    platform-driver-x86: samsung-laptop: make dmi_check_cb to return 1 instead of 0
+    
+    dmi_check_system() walks the table running matching functions until
+    someone returns non zero or we hit the end.
+    
+    This patch makes dmi_check_cb to return 1 so dmi_check_system() return
+    immediately when a match is found.
+    
+    Signed-off-by: Axel Lin <axel.lin@gmail.com>
+    Signed-off-by: Matthew Garrett <mjg@redhat.com>
+
+diff --git a/drivers/platform/x86/samsung-laptop.c b/drivers/platform/x86/samsung-laptop.c
+index e0b390d..de434c6 100644
+--- a/drivers/platform/x86/samsung-laptop.c
++++ b/drivers/platform/x86/samsung-laptop.c
+@@ -496,7 +496,7 @@ static int __init dmi_check_cb(const struct dmi_system_id *id)
+ {
+ 	pr_info("found laptop model '%s'\n",
+ 		id->ident);
+-	return 0;
++	return 1;
+ }
+ 
+ static struct dmi_system_id __initdata samsung_dmi_table[] = {

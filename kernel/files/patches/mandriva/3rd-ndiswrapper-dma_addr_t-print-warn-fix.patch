@@ -1,0 +1,28 @@
+Fix following warning:
+
+3rdparty/ndiswrapper/ndis.c: In function 'NdisMFreeMapRegisters':
+3rdparty/ndiswrapper/ndis.c:998: warning: cast to pointer from integer of different size
+
+Happens when dma_addr_t is u64 and pointer is 32 bits (like i386 with
+CONFIG_HIGHMEM64G).
+
+Signed-off-by: Herton Ronaldo Krzesinski <herton@mandriva.com.br>
+---
+ 3rdparty/ndiswrapper/ndis.c |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff -p -up linux-2.6.29/3rdparty/ndiswrapper/ndis.c.orig linux-2.6.29/3rdparty/ndiswrapper/ndis.c
+--- linux-2.6.29/3rdparty/ndiswrapper/ndis.c.orig	2009-05-22 17:03:00.000000000 -0300
++++ linux-2.6.29/3rdparty/ndiswrapper/ndis.c	2009-05-22 17:28:27.000000000 -0300
+@@ -995,9 +995,9 @@ wstdcall void WIN_FUNC(NdisMFreeMapRegis
+ 	if (wnd->dma_map_addr) {
+ 		for (i = 0; i < wnd->dma_map_count; i++) {
+ 			if (wnd->dma_map_addr[i])
+-				WARNING("%s: dma addr %p not freed by "
++				WARNING("%s: dma addr %#llx not freed by "
+ 					"Windows driver", wnd->net_dev->name,
+-					(void *)wnd->dma_map_addr[i]);
++					(unsigned long long)wnd->dma_map_addr[i]);
+ 		}
+ 		kfree(wnd->dma_map_addr);
+ 		wnd->dma_map_addr = NULL;

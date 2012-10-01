@@ -1,0 +1,30 @@
+---
+ drivers/net/sis190.c |   10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+--- linux-2.6.31-rc3-git5-mnb1/drivers/net/sis190.c.net-sis190-fix-list-usage.orig	2009-07-22 01:11:11.000000000 +0300
++++ linux-2.6.31-rc3-git5-mnb1/drivers/net/sis190.c	2009-07-22 23:07:15.000000000 +0300
+@@ -1252,6 +1252,7 @@ static u16 sis190_default_phy(struct net
+ 	struct sis190_private *tp = netdev_priv(dev);
+ 	struct mii_if_info *mii_if = &tp->mii_if;
+ 	void __iomem *ioaddr = tp->mmio_addr;
++	struct list_head *l;
+ 	u16 status;
+ 
+ 	phy_home = phy_default = phy_lan = NULL;
+@@ -1280,9 +1281,12 @@ static u16 sis190_default_phy(struct net
+ 			phy_default = phy_home;
+ 		else if (phy_lan)
+ 			phy_default = phy_lan;
+-		else
+-			phy_default = list_first_entry(&tp->first_phy,
+-						 struct sis190_phy, list);
++		else {
++			l = &tp->first_phy;
++			l = l->next;
++			phy_default = list_first_entry(l, struct sis190_phy, list);
++
++		}
+ 	}
+ 
+ 	if (mii_if->phy_id != phy_default->phy_id) {
