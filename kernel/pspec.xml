@@ -12,7 +12,7 @@
         <IsA>kernel</IsA>
         <Summary>The Linux kernel (the core of the Linux operating system) for Pardus Linux</Summary>
         <Description>kernel contains the Linux kernel, the core of any Linux operating system. The kernel handles the basic functions of the operating system: memory allocation, process allocation, device input and output, etc.</Description>
-        <Archive sha1sum="e7d316476c883c786d369d2958a1e0a83b46ad0b" type="tarbz2">http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.5.4.tar.bz2</Archive>
+        <Archive sha1sum="8e32c6c3bdfa50c6e232dba0bf50a67628b7d6c3" type="tarxz">http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.5.5.tar.xz</Archive>
         <AdditionalFiles>
             <AdditionalFile target="configs/kernel-i686-config">configs/kernel-i686-config</AdditionalFile>
             <AdditionalFile target="configs/kernel-x86_64-config">configs/kernel-x86_64-config</AdditionalFile>
@@ -23,7 +23,7 @@
 	    <AdditionalFile permission="0755" target="update_configs">scripts/update_configs</AdditionalFile>
         </AdditionalFiles>
         <BuildDependencies>
-	    <Dependency release="210">pisi</Dependency>
+	    <Dependency release="211">pisi</Dependency>
             <Dependency>cpio</Dependency>
             <Dependency>unifdef</Dependency>
             <Dependency>elfutils</Dependency>
@@ -291,6 +291,17 @@
     </Package>
 
     <History>
+         <Update release="164">
+            <Date>2012-10-02</Date>
+            <Version>3.5.5</Version>
+            <Comment>Bump to 3.5.5</Comment>
+	    <Type package="kernel">security</Type>
+	     <Requires>
+                <Action package="kernel">systemRestart</Action>
+            </Requires>
+            <Name>Erdinç Gültekin</Name>
+            <Email>erdincgultekin@gmail.com</Email>
+        </Update>
        <Update release="164">
             <Date>2012-09-27</Date>
             <Version>3.5.4</Version>
