@@ -5,8 +5,8 @@
         <Name>pisi</Name>
         <Homepage>http://www.pardus.org.tr/</Homepage>
         <Packager>
-            <Name>Fatih Aşıcı</Name>
-            <Email>fatih@pardus.org.tr</Email>
+            <Name>Pardus ANKA Admins</Name>
+            <Email>pisiciftligi@pardus-linux.org</Email>
         </Packager>
         <License>GPLv2</License>
         <IsA>app:console</IsA>
@@ -64,6 +64,13 @@
     </Package>
 
     <History>
+        <Update release="211">
+            <Date>2012-09-28</Date>
+            <Version>2.4</Version>
+            <Comment>kerneltools.py</Comment>
+            <Name>Erdinç Gültekin</Name>
+            <Email>erdincgultekin@gmail.com</Email>
+        </Update>
         <Update release="210">
             <Date>2012-02-10</Date>
             <Version>2.4</Version>
