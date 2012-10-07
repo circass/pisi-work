@@ -12,32 +12,33 @@
         <IsA>kernel</IsA>
         <Summary>The Linux kernel (the core of the Linux operating system) for Pardus Linux</Summary>
         <Description>kernel contains the Linux kernel, the core of any Linux operating system. The kernel handles the basic functions of the operating system: memory allocation, process allocation, device input and output, etc.</Description>
-        <Archive sha1sum="8e32c6c3bdfa50c6e232dba0bf50a67628b7d6c3" type="tarxz">http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.5.5.tar.xz</Archive>
+        <Archive sha1sum="8e32c6c3bdfa50c6e232dba0bf50a67628b7d6c3" type="tarxz">file:///home/erdinc/linux-3.5.5.tar.xz</Archive>
         <AdditionalFiles>
             <AdditionalFile target="configs/kernel-i686-config">configs/kernel-i686-config</AdditionalFile>
             <AdditionalFile target="configs/kernel-x86_64-config">configs/kernel-x86_64-config</AdditionalFile>
             <AdditionalFile permission="0755" target="generate-module-list">scripts/generate-module-list</AdditionalFile>
-	    <AdditionalFile permission="0755" target="apply_patches">scripts/apply_patches</AdditionalFile>
-	    <AdditionalFile permission="0755" target="create_quilt_tree">scripts/create_quilt_tree</AdditionalFile>
-	    <AdditionalFile permission="0755" target="kcooker-rebase">scripts/kcooker-rebase</AdditionalFile>
-	    <AdditionalFile permission="0755" target="update_configs">scripts/update_configs</AdditionalFile>
+            <AdditionalFile permission="0755" target="apply_patches">scripts/apply_patches</AdditionalFile>
+            <AdditionalFile permission="0755" target="create_quilt_tree">scripts/create_quilt_tree</AdditionalFile>
+            <AdditionalFile permission="0755" target="kcooker-rebase">scripts/kcooker-rebase</AdditionalFile>
+            <AdditionalFile permission="0755" target="update_configs">scripts/update_configs</AdditionalFile>
         </AdditionalFiles>
         <BuildDependencies>
-	    <Dependency release="211">pisi</Dependency>
+            <Dependency releaseFrom="212">pisi</Dependency>
+            <Dependency>gtk2-devel</Dependency><!-- For perf gtk2 support-->
             <Dependency>cpio</Dependency>
             <Dependency>unifdef</Dependency>
             <Dependency>elfutils</Dependency>
             <Dependency>diffutils</Dependency>
             <Dependency>newt-devel</Dependency><!-- For perf -->
-	    <Dependency>xmlto</Dependency>
-	    <Dependency>asciidoc</Dependency>
-	    <Dependency>pciutils-devel</Dependency>
+            <Dependency>xmlto</Dependency>
+            <Dependency>asciidoc</Dependency>
+            <Dependency>pciutils-devel</Dependency>
         </BuildDependencies>
         <Patches>
             <!-- Mandriva patches -->
-	    <Patch level="1">patches/mandriva/acpi-processor-M720SR-limit-to-C2.patch</Patch>
-	    <Patch level="1">patches/mandriva/acpi-video-add-blacklist-to-use-vendor-driver.patch</Patch>
-	    <Patch level="1">patches/mandriva/video-mdk-logo.patch</Patch>
+            <Patch level="1">patches/mandriva/acpi-processor-M720SR-limit-to-C2.patch</Patch>
+            <Patch level="1">patches/mandriva/acpi-video-add-blacklist-to-use-vendor-driver.patch</Patch>
+            <Patch level="1">patches/mandriva/video-mdk-logo.patch</Patch>
 
             <!-- Moblin patches -->
 
@@ -65,37 +66,33 @@
             <Patch level="1">patches/mageia/3rd-viahss-config.patch</Patch>
             <Patch level="1">patches/mageia/3rd-viahss-module-license.patch</Patch>
             <Patch level="1">patches/mageia/acpi-CLEVO-M360S-disable_acpi_irq.patch</Patch>
-	    <Patch level="1">patches/mageia/block-floppy-disable-pnp-modalias.patch</Patch>
-	    <Patch level="1">patches/mageia/bluetooth-hci_usb-disable-isoc-transfers.patch</Patch>
-	    <Patch level="1">patches/mageia/char-agp-intel-new-Q57-id.patch</Patch>
-	    <Patch level="1">patches/mageia/dm-raid-aliases.patch</Patch>
-	    <Patch level="1">patches/mageia/firewire-ieee1394-module-aliases.patch</Patch>
-	       
-
-	    <Patch level="1">patches/mageia/media-video-pwc-lie-in-proc-usb-devices.patch</Patch>
-	    
-	    <Patch level="1">patches/mageia/net-sis190-fix-list-usage.patch</Patch>
-	    <Patch level="1">patches/mageia/pci-add-ALI-M5229-ide-compatibility-mode-quirk.patch</Patch>
-	    <Patch level="1">patches/mageia/pci-pciprobe-CardBusNo.patch</Patch>
-	    <Patch level="1">patches/mageia/platform-x86-add-shuttle-wmi-driver.patch</Patch>
-	    <Patch level="1">patches/mageia/pnp-isapnp-async-init.patch</Patch>
-	    <Patch level="1">patches/mageia/pnp-pnpbios-off-by-default.patch</Patch>
-	    <Patch level="1">patches/mageia/scsi-megaraid-new-sysfs-name.patch</Patch>
-	    <Patch level="1">patches/mageia/scsi-ppscsi-2.6.2.patch</Patch>
-	    <Patch level="1">patches/mageia/scsi-ppscsi-3.0-buildfix.patch</Patch>
-	    <Patch level="1">patches/mageia/scsi-ppscsi_fixes.patch</Patch>
-	    <Patch level="1">patches/mageia/scsi-ppscsi-sg-helper-update.patch</Patch>
-	    <Patch level="1">patches/mageia/scsi-ppscsi-update-for-scsi_data_buffer.patch</Patch>
-	    <Patch level="1">patches/mageia/smack-unionfs-deadlock-fix.patch</Patch>
-	    <Patch level="1">patches/mageia/sound-alsa-hda-ad1884a-hp-dc-model.patch</Patch>
-	    <Patch level="1">patches/mageia/sound-bluetooth-SCO-support.patch</Patch>
-	  	    
-	    <Patch level="1">patches/mageia/x86-boot-video-80x25-if-break.patch</Patch>
-	    <Patch level="1">patches/mageia/x86-cpufreq-speedstep-dothan-3.patch</Patch>
-	    <Patch level="1">patches/mageia/x86-default_poweroff_up_machines.patch</Patch>
-	    <Patch level="1">patches/mageia/x86-increase-default-minimum-vmalloc-area-by-64MB-to-192MB.patch</Patch>
-	    <Patch level="1">patches/mageia/x86-p4_clockmod-reasonable-default-for-scaling_min_freq.patch</Patch>
-	    <Patch level="1">patches/mageia/x86-pci-toshiba-equium-a60-assign-busses.patch</Patch>-->
+            <Patch level="1">patches/mageia/block-floppy-disable-pnp-modalias.patch</Patch>
+            <Patch level="1">patches/mageia/bluetooth-hci_usb-disable-isoc-transfers.patch</Patch>
+            <Patch level="1">patches/mageia/char-agp-intel-new-Q57-id.patch</Patch>
+            <Patch level="1">patches/mageia/dm-raid-aliases.patch</Patch>
+            <Patch level="1">patches/mageia/firewire-ieee1394-module-aliases.patch</Patch>   
+            <Patch level="1">patches/mageia/media-video-pwc-lie-in-proc-usb-devices.patch</Patch>
+            <Patch level="1">patches/mageia/net-sis190-fix-list-usage.patch</Patch>
+            <Patch level="1">patches/mageia/pci-add-ALI-M5229-ide-compatibility-mode-quirk.patch</Patch>
+            <Patch level="1">patches/mageia/pci-pciprobe-CardBusNo.patch</Patch>
+            <Patch level="1">patches/mageia/platform-x86-add-shuttle-wmi-driver.patch</Patch>
+            <Patch level="1">patches/mageia/pnp-isapnp-async-init.patch</Patch>
+            <Patch level="1">patches/mageia/pnp-pnpbios-off-by-default.patch</Patch>
+            <Patch level="1">patches/mageia/scsi-megaraid-new-sysfs-name.patch</Patch>
+            <Patch level="1">patches/mageia/scsi-ppscsi-2.6.2.patch</Patch>
+            <Patch level="1">patches/mageia/scsi-ppscsi-3.0-buildfix.patch</Patch>
+            <Patch level="1">patches/mageia/scsi-ppscsi_fixes.patch</Patch>
+            <Patch level="1">patches/mageia/scsi-ppscsi-sg-helper-update.patch</Patch>
+            <Patch level="1">patches/mageia/scsi-ppscsi-update-for-scsi_data_buffer.patch</Patch>
+            <Patch level="1">patches/mageia/smack-unionfs-deadlock-fix.patch</Patch>
+            <Patch level="1">patches/mageia/sound-alsa-hda-ad1884a-hp-dc-model.patch</Patch>
+            <Patch level="1">patches/mageia/sound-bluetooth-SCO-support.patch</Patch>	    
+            <Patch level="1">patches/mageia/x86-boot-video-80x25-if-break.patch</Patch>
+            <Patch level="1">patches/mageia/x86-cpufreq-speedstep-dothan-3.patch</Patch>
+            <Patch level="1">patches/mageia/x86-default_poweroff_up_machines.patch</Patch>
+            <Patch level="1">patches/mageia/x86-increase-default-minimum-vmalloc-area-by-64MB-to-192MB.patch</Patch>
+            <Patch level="1">patches/mageia/x86-p4_clockmod-reasonable-default-for-scaling_min_freq.patch</Patch>
+            <Patch level="1">patches/mageia/x86-pci-toshiba-equium-a60-assign-busses.patch</Patch>-->
 
             <!-- Fedora Kernel Patches -->
 
@@ -120,49 +117,46 @@
             <Patch level="1">patches/fedora/weird-root-dentry-name-debug.patch</Patch>
 
             <!-- OpenSuSE Kernel Patches -->
-	    <Patch level="1" compressionType="bz2">patches/suse/patches.apparmor.tar.bz2</Patch>
-	    <Patch level="1" compressionType="bz2">patches/suse/patches.drivers.tar.bz2</Patch>
-	    
-	    <Patch level="1">patches/suse/patches.fixes/acpi_ec_sys_access_user_space_with_get_user.patch</Patch>
-	    <Patch level="1">patches/suse/patches.fixes/bridge-module-get-put.patch</Patch>
-	    <Patch level="1">patches/suse/patches.fixes/cpufreq_ondemand_performance_optimise_default_settings.patch</Patch>
-	    <Patch level="1">patches/suse/patches.fixes/hv-storvsc-reset-wait.patch</Patch>
-	    <Patch level="1">patches/suse/patches.fixes/ia64-configure-HAVE_UNSTABLE_SCHED_CLOCK-for-SGI_SN.patch</Patch>
-	    <Patch level="1">patches/suse/patches.fixes/input-add-acer-aspire-5710-to-nomux.patch</Patch>
-	    <Patch level="1">patches/suse/patches.fixes/kvm-ioapic.patch</Patch>
-	    <Patch level="1">patches/suse/patches.fixes/kvm-macos.patch</Patch>
-	    <Patch level="1">patches/suse/patches.fixes/mm-Fix-assertion-mapping-nrpages-0-in-end_writeback.patch</Patch>
-	    <Patch level="1">patches/suse/patches.fixes/scsi-ibmvscsi-module_alias.patch</Patch>
-	    <Patch level="1">patches/suse/patches.fixes/scsi-ibmvscsi-show-config.patch</Patch>
-	    
-	    <Patch level="1">patches/suse/patches.arch/cubox-configuration.patch</Patch>
-	    <Patch level="1">patches/suse/patches.arch/perf_timechart_fix_zero_timestamps.patch</Patch>
-	    <Patch level="1">patches/suse/patches.arch/ppc-pegasos-console-autodetection.patch</Patch>
-	    <Patch level="1">patches/suse/patches.arch/ppc-prom-nodisplay.patch</Patch>
-	    <Patch level="1">patches/suse/patches.arch/srat_parsing_redo_return.patch</Patch>
-	    <Patch level="1">patches/suse/patches.arch/x86_64-hpet-64bit-timer.patch</Patch>
-	    <Patch level="1">patches/suse/patches.arch/x86-apic-force-bigsmp-apic-on-IBM-EXA3-4.patch</Patch>
-	    
-	    <Patch level="1">patches/suse/patches.suse/0001-vfs-Hooks-for-more-fine-grained-directory-permission.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0002-vfs-Add-generic-IS_ACL-test-for-acl-support.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0003-vfs-Add-IS_RICHACL-test-for-richacl-support.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0004-richacl-In-memory-representation-and-helper-function.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0005-richacl-Permission-mapping-functions.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0006-richacl-Compute-maximum-file-masks-from-an-acl.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0007-richacl-Update-the-file-masks-in-chmod.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0008-richacl-Permission-check-algorithm.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0009-richacl-Helper-functions-for-implementing-richacl-in.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0010-richacl-Create-time-inheritance.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0011-richacl-Check-if-an-acl-is-equivalent-to-a-file-mode.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0012-richacl-Automatic-Inheritance.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0013-richacl-Restrict-access-check-algorithm.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0014-richacl-xattr-mapping-functions.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/0016-ext4-Implement-richacl-support-in-ext4.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/8250-sysrq-ctrl_o.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/b43-missing-firmware-info.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/btrfs-allow-cross-subvolume-file-clone.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/btrfs-use-correct-device-for-maps.patch</Patch>
-	    <Patch level="1">patches/suse/patches.suse/kbd-ignore-gfx.patch</Patch>
+            <Patch level="1" compressionType="bz2">patches/suse/patches.apparmor.tar.bz2</Patch>
+            <Patch level="1" compressionType="bz2">patches/suse/patches.drivers.tar.bz2</Patch>
+            <Patch level="1">patches/suse/patches.fixes/acpi_ec_sys_access_user_space_with_get_user.patch</Patch>
+            <Patch level="1">patches/suse/patches.fixes/bridge-module-get-put.patch</Patch>
+            <Patch level="1">patches/suse/patches.fixes/cpufreq_ondemand_performance_optimise_default_settings.patch</Patch>
+            <Patch level="1">patches/suse/patches.fixes/hv-storvsc-reset-wait.patch</Patch>
+            <Patch level="1">patches/suse/patches.fixes/ia64-configure-HAVE_UNSTABLE_SCHED_CLOCK-for-SGI_SN.patch</Patch>
+            <Patch level="1">patches/suse/patches.fixes/input-add-acer-aspire-5710-to-nomux.patch</Patch>
+            <Patch level="1">patches/suse/patches.fixes/kvm-ioapic.patch</Patch>
+            <Patch level="1">patches/suse/patches.fixes/kvm-macos.patch</Patch>
+            <Patch level="1">patches/suse/patches.fixes/mm-Fix-assertion-mapping-nrpages-0-in-end_writeback.patch</Patch>
+            <Patch level="1">patches/suse/patches.fixes/scsi-ibmvscsi-module_alias.patch</Patch>
+            <Patch level="1">patches/suse/patches.fixes/scsi-ibmvscsi-show-config.patch</Patch>
+            <Patch level="1">patches/suse/patches.arch/cubox-configuration.patch</Patch>
+            <Patch level="1">patches/suse/patches.arch/perf_timechart_fix_zero_timestamps.patch</Patch>
+            <Patch level="1">patches/suse/patches.arch/ppc-pegasos-console-autodetection.patch</Patch>
+            <Patch level="1">patches/suse/patches.arch/ppc-prom-nodisplay.patch</Patch>
+            <Patch level="1">patches/suse/patches.arch/srat_parsing_redo_return.patch</Patch>
+            <Patch level="1">patches/suse/patches.arch/x86_64-hpet-64bit-timer.patch</Patch>
+            <Patch level="1">patches/suse/patches.arch/x86-apic-force-bigsmp-apic-on-IBM-EXA3-4.patch</Patch> 
+            <Patch level="1">patches/suse/patches.suse/0001-vfs-Hooks-for-more-fine-grained-directory-permission.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0002-vfs-Add-generic-IS_ACL-test-for-acl-support.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0003-vfs-Add-IS_RICHACL-test-for-richacl-support.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0004-richacl-In-memory-representation-and-helper-function.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0005-richacl-Permission-mapping-functions.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0006-richacl-Compute-maximum-file-masks-from-an-acl.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0007-richacl-Update-the-file-masks-in-chmod.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0008-richacl-Permission-check-algorithm.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0009-richacl-Helper-functions-for-implementing-richacl-in.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0010-richacl-Create-time-inheritance.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0011-richacl-Check-if-an-acl-is-equivalent-to-a-file-mode.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0012-richacl-Automatic-Inheritance.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0013-richacl-Restrict-access-check-algorithm.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0014-richacl-xattr-mapping-functions.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/0016-ext4-Implement-richacl-support-in-ext4.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/8250-sysrq-ctrl_o.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/b43-missing-firmware-info.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/btrfs-allow-cross-subvolume-file-clone.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/btrfs-use-correct-device-for-maps.patch</Patch>
+            <Patch level="1">patches/suse/patches.suse/kbd-ignore-gfx.patch</Patch>
 
             <!-- Pardus Kernel Patches -->
 
@@ -282,6 +276,7 @@
         <RuntimeDependencies>
             <Dependency>newt</Dependency>
             <Dependency>elfutils</Dependency>
+	    <Dependency>gtk2</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin/perf*</Path>
