@@ -15,7 +15,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import QMessageBox
 from PyKDE4.kdecore import ki18n, KConfig
 
-import subprocess,os, dbus
+import subprocess,os, dbus, time
 
 from kaptan.screen import Screen
 from kaptan.screens.ui_scrSummary import Ui_summaryWidget
@@ -26,8 +26,9 @@ import kaptan.screens.scrWallpaper as wallpaperWidget
 import kaptan.screens.scrMouse as mouseWidget
 import kaptan.screens.scrStyle as styleWidget
 import kaptan.screens.scrMenu as menuWidget
-import kaptan.screens.scrSmolt  as smoltWidget
 import kaptan.screens.scrAvatar  as avatarWidget
+import kaptan.screens.scrServices as servicesWidget
+import kaptan.screens.scrSecurity as securityWidget
 
 from kaptan.tools import tools
 
@@ -45,8 +46,9 @@ class Widget(QtGui.QWidget, Screen):
         self.mouseSettings = mouseWidget.Widget.screenSettings
         self.menuSettings = menuWidget.Widget.screenSettings
         self.styleSettings = styleWidget.Widget.screenSettings
-        self.smoltSettings = smoltWidget.Widget.screenSettings
         self.avatarSettings = avatarWidget.Widget.screenSettings
+        self.servicesSettings = servicesWidget.Widget.screenSettings
+        self.securitySettings = securityWidget.Widget.screenSettings
 
         subject = "<p><li><b>%s</b></li><ul>"
         item    = "<li>%s</li>"
@@ -59,7 +61,7 @@ class Widget(QtGui.QWidget, Screen):
         content.append(subject % ki18n("Mouse Settings").toString())
 
         content.append(item % ki18n("Selected Mouse configuration: <b>%s</b>").toString() % self.mouseSettings["summaryMessage"]["selectedMouse"].toString())
-        content.append(item % ki18n("Selected clicking behaviour: <b>%s</b>").toString() % self.mouseSettings["summaryMessage"]["clickBehaviour"].toString())
+        content.append(item % ki18n("Selected clicking behavior: <b>%s</b>").toString() % self.mouseSettings["summaryMessage"]["clickBehavior"].toString())
         content.append(end)
 
         # Menu Settings
@@ -75,46 +77,74 @@ class Widget(QtGui.QWidget, Screen):
             content.append(item % ki18n("Selected Wallpaper: <b>%s</b>").toString() % os.path.basename(str(self.wallpaperSettings["selectedWallpaper"])))
         content.append(end)
 
-        # Style Settings
-        content.append(subject % ki18n("Style Settings").toString())
+        # Services Settings
+        if self.servicesSettings["hasChanged"]:
+            self.daemon = Daemon()
+            self.svctext = ki18n("You have: ").toString()
+            self.svcissset = False
+            content.append(subject % ki18n("Services Settings").toString())
 
-        if not self.styleSettings["hasChanged"]:
-            content.append(item % ki18n("You haven't selected any style.").toString())
-        else:
-            content.append(item % ki18n("Selected Style: <b>%s</b>").toString() % unicode(self.styleSettings["summaryMessage"]))
+            if self.servicesSettings["enableCups"] and not self.daemon.isEnabled("cups"):
+                self.svctext += ki18n("enabled cups; ").toString()
+                self.svcisset = True
+            elif not self.servicesSettings["enableCups"] and self.daemon.isEnabled("cups"):
+                self.svctext += ki18n("disabled cups; ").toString()
+                self.svcisset = True
+            if self.servicesSettings["enableBluetooth"] and not self.daemon.isEnabled("bluetooth"):
+                self.svctext += ki18n("enabled bluetooth; ").toString()
+                self.svcisset = True
+            elif not self.servicesSettings["enableBluetooth"] and self.daemon.isEnabled("bluetooth"):
+                self.svctext += ki18n("disabled bluetooth; ").toString()
+                self.svcisset = True
 
-        content.append(end)
+            if not self.svcisset:
+                self.svctext = ki18n("You have made no changes.").toString()
+                self.servicesSettings["hasChanged"] = False
 
-        # Smolt Settings
-        try:
-            if self.smoltSettings["summaryMessage"]:
-                content.append(subject %ki18n("Smolt Settings").toString())
-                content.append(item % ki18n("Send my profile: <b>%s</b>").toString() % self.smoltSettings["summaryMessage"])
-                #content.append(ki18n("(<i><u>Warning:</u> Sending profile requires to set up communication with Smolt server and can take between 30 seconds to a minute. Kaptan may freeze during this time.</i>)").toString())
-                content.append(end)
-        except:
-            print "WARNING: Your Smolt profile is already sent."
+            content.append(item % ki18n(self.svctext).toString())
 
-        content.append("""</ul></body></html>""")
-        self.ui.textSummary.setHtml(content)
+            content.append(end)
+
+        # Security Settings
+        if self.securitySettings["hasChanged"]:
+            self.daemon = Daemon()
+            self.sectext = ki18n("You have: ").toString()
+            self.secisset = False
+            content.append(subject % ki18n("Security Settings").toString())
+
+            if self.securitySettings["enableClam"] and not self.daemon.isEnabled("clamd"):
+                self.sectext += ki18n("enabled ClamAV; ").toString()
+                self.secisset = True
+            elif not self.securitySettings["enableClam"] and self.daemon.isEnabled("clamd"):
+                self.sectext += ki18n("disabled ClamAV; ").toString()
+                self.secisset = True
+            if self.securitySettings["enableFire"] and not self.daemon.isEnabled("ufw"):
+                self.sectext += ki18n("enabled the firewall; ").toString()
+                self.secisset = True
+            elif not self.securitySettings["enableFire"] and self.daemon.isEnabled("ufw"):
+                self.sectext += ki18n("disabled the firewall; ").toString()
+                self.secisset = True
+
+            if not self.secisset:
+                self.sectext = ki18n("You have made no changes.").toString()
+                self.securitySettings["hasChanged"] = False
+
+            content.append(item % ki18n(self.sectext).toString())
+
+            content.append(end)
+
+        self.ui.textSummary.setText(content)
+
 
     def killPlasma(self):
         try:
-            p = subprocess.Popen(["pidof", "-s", "plasma-desktop"], stdout=subprocess.PIPE)
+            p = subprocess.Popen(["kquitapp", "plasma-desktop"], stdout=subprocess.PIPE)
             out, err = p.communicate()
-            pidOfPlasma = int(out)
+            time.sleep(1)
+            self.startPlasma()
 
-            try:
-                os.kill(pidOfPlasma, 15)
-            except OSError, e:
-                print 'WARNING: failed os.kill: %s' % e
-                print "Trying SIGKILL"
-                os.kill(pidOfPlasma, 9)
-
-            finally:
-                self.startPlasma()
         except:
-            QMessageBox.critical(self, ki18n("Error").toString(), ki18n("Cannot restart plasma-desktop. Kaptan will now shutdown.").toString())
+            QMessageBox.critical(self, ki18n("Error").toString(), ki18n("Cannot restart plasma-desktop. Kaptan will now shut down.").toString())
             from PyKDE4 import kdeui
             kdeui.KApplication.kApplication().quit()
 
@@ -124,6 +154,7 @@ class Widget(QtGui.QWidget, Screen):
 
     def execute(self):
         hasChanged = False
+        rootActions = ""
 
         # Wallpaper Settings
         if self.wallpaperSettings["hasChanged"]:
@@ -259,8 +290,8 @@ class Widget(QtGui.QWidget, Screen):
                 group = configKdeGlobals.group("General")
                 group.writeEntry("widgetStyle", self.styleSettings["styleDetails"][unicode(self.styleSettings["styleName"])]["widgetStyle"])
 
-                groupIconTheme = configKdeGlobals.group("Icons")
-                groupIconTheme.writeEntry("Theme", self.styleSettings["iconTheme"])
+                #groupIconTheme = configKdeGlobals.group("Icons")
+                #groupIconTheme.writeEntry("Theme", self.styleSettings["iconTheme"])
                 #groupIconTheme.writeEntry("Theme", self.styleSettings["styleDetails"][unicode(self.styleSettings["styleName"])]["iconTheme"])
 
                 configKdeGlobals.sync()
@@ -311,18 +342,37 @@ class Widget(QtGui.QWidget, Screen):
             except dbus.DBusException:
                 pass
 
-        # Smolt Settings
-        if self.smoltSettings["profileSend"]:
-            self.procSettings = QProcess()
-            command = "smoltSendProfile"
-            arguments = ["-a", "--submitOnly"]
-            self.procSettings.startDetached(command, arguments)
-
         # Avatar Settings
         if self.avatarSettings["hasChanged"]:
             hasChanged = True
 
+        # Services Settings
+        if self.servicesSettings["hasChanged"]:
+            if self.servicesSettings["enableCups"] and not self.daemon.isEnabled("cups"):
+                rootActions += "enable_cups "
+            elif not self.servicesSettings["enableCups"] and self.daemon.isEnabled("cups"):
+                rootActions += "disable_cups "
+            if self.servicesSettings["enableBluetooth"] and not self.daemon.isEnabled("bluetooth"):
+                rootActions += "enable_blue "
+            elif not self.servicesSettings["enableBluetooth"] and self.daemon.isEnabled("bluetooth"):
+                rootActions += "disable_blue "
+
+        # Security Settings
+        if self.securitySettings["hasChanged"]:
+            if self.securitySettings["enableClam"] and not self.daemon.isEnabled("clamd"):
+                rootActions += "enable_clam "
+            elif not self.securitySettings["enableClam"] and self.daemon.isEnabled("clamd"):
+                rootActions += "disable_clam "
+            if self.securitySettings["enableFire"] and not self.daemon.isEnabled("ufw"):
+                rootActions += "enable_fire "
+            elif not self.securitySettings["enableFire"] and self.daemon.isEnabled("ufw"):
+                rootActions += "disable_fire "
+
+
         if hasChanged:
             self.killPlasma()
+
+        if not rootActions == "":
+            os.system("kdesu konsole -e kaptan-rootactions " + rootActions)
 
         return True

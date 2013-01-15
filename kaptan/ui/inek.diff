@@ -1,0 +1,661 @@
+--- ui_scrGoodbye.ui	2011-01-03 11:51:08.000000000 +0200
++++ ui_scrGoodbyekap.ui	2013-01-15 09:05:54.000000000 +0200
+@@ -23,6 +23,22 @@
+    <property name="margin">
+     <number>20</number>
+    </property>
++   <item row="1" column="0">
++    <spacer name="verticalSpacer_6">
++     <property name="orientation">
++      <enum>Qt::Vertical</enum>
++     </property>
++     <property name="sizeType">
++      <enum>QSizePolicy::Fixed</enum>
++     </property>
++     <property name="sizeHint" stdset="0">
++      <size>
++       <width>20</width>
++       <height>20</height>
++      </size>
++     </property>
++    </spacer>
++   </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="description">
+      <property name="sizePolicy">
+@@ -47,29 +63,13 @@
+       <string notr="true"/>
+      </property>
+      <property name="text">
+-      <string>&lt;b&gt;Your settings have been applied.&lt;/b&gt; Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to &lt;b&gt;join our community!&lt;/b&gt;</string>
++      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Your settings have been applied.&lt;/span&gt; Now you can start enjoying Chakra, or check out the following links and applications for more settings, or for help and support. Don't forget to &lt;span style=&quot; font-weight:600;&quot;&gt;join our community!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+-   <item row="1" column="0">
+-    <spacer name="verticalSpacer_6">
+-     <property name="orientation">
+-      <enum>Qt::Vertical</enum>
+-     </property>
+-     <property name="sizeType">
+-      <enum>QSizePolicy::Fixed</enum>
+-     </property>
+-     <property name="sizeHint" stdset="0">
+-      <size>
+-       <width>20</width>
+-       <height>20</height>
+-      </size>
+-     </property>
+-    </spacer>
+-   </item>
+    <item row="3" column="0">
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="styleSheet">
+@@ -87,7 +87,7 @@
+         <x>0</x>
+         <y>0</y>
+         <width>589</width>
+-        <height>653</height>
++        <height>659</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+@@ -101,15 +101,15 @@
+         <number>10</number>
+        </property>
+        <item>
+-        <layout class="QVBoxLayout" name="verticalLayout_2">
++        <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+-          <widget class="QLabel" name="label">
++          <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+-             <family>URW Gothic L</family>
++             <family>DejaVu Sans</family>
+              <pointsize>9</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+@@ -118,14 +118,13 @@
+            </property>
+            <property name="styleSheet">
+             <string notr="true">    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
+-/*background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));*/
+ border: 1px solid rgba(255,255,255,50);
+ color:white;
+ border-top-left-radius: 4px;
+ border-top-right-radius: 4px;</string>
+            </property>
+            <property name="text">
+-            <string>My Smolt Page</string>
++            <string>System Settings</string>
+            </property>
+            <property name="margin">
+             <number>5</number>
+@@ -133,7 +132,7 @@
+           </widget>
+          </item>
+          <item>
+-          <widget class="QGroupBox" name="smoltGroupBox">
++          <widget class="QGroupBox" name="groupBox">
+            <property name="font">
+             <font>
+              <family>Sans Serif</family>
+@@ -145,7 +144,7 @@
+             </font>
+            </property>
+            <property name="styleSheet">
+-            <string notr="true">#smoltGroupBox{
++            <string notr="true">#groupBox{
+ background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));
+ border: 1px solid rgba(255,255,255,50);
+ border-bottom-left-radius: 4px;
+@@ -164,58 +163,37 @@
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+-           <layout class="QGridLayout" name="gridLayout">
++           <layout class="QGridLayout" name="gridLayout_3">
+             <property name="margin">
+              <number>10</number>
+             </property>
+-            <item row="0" column="2">
+-             <spacer name="horizontalSpacer_5">
+-              <property name="orientation">
+-               <enum>Qt::Horizontal</enum>
+-              </property>
+-              <property name="sizeType">
+-               <enum>QSizePolicy::Fixed</enum>
+-              </property>
+-              <property name="sizeHint" stdset="0">
++            <item row="0" column="0">
++             <widget class="QLabel" name="label_6">
++              <property name="minimumSize">
+                <size>
+-                <width>30</width>
+-                <height>28</height>
++                <width>64</width>
++                <height>64</height>
+                </size>
+               </property>
+-             </spacer>
+-            </item>
+-            <item row="0" column="3">
+-             <widget class="QPushButton" name="buttonSystemSettings_2">
+-              <property name="sizePolicy">
+-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+-                <horstretch>0</horstretch>
+-                <verstretch>0</verstretch>
+-               </sizepolicy>
+-              </property>
+-              <property name="minimumSize">
++              <property name="maximumSize">
+                <size>
+-                <width>180</width>
+-                <height>25</height>
++                <width>64</width>
++                <height>64</height>
+                </size>
+               </property>
+-              <property name="font">
+-               <font>
+-                <family>Sans Serif</family>
+-                <pointsize>10</pointsize>
+-                <weight>50</weight>
+-                <bold>false</bold>
+-               </font>
++              <property name="text">
++               <string/>
+               </property>
+-              <property name="styleSheet">
+-               <string notr="true">color: rgb(30, 43, 51)</string>
++              <property name="pixmap">
++               <pixmap resource="../data/kapudan.qrc">:/raw/pixmap/preferences-system.png</pixmap>
+               </property>
+-              <property name="text">
+-               <string>My Smolt Page</string>
++              <property name="scaledContents">
++               <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+-             <widget class="QLabel" name="labelSystemSettings_2">
++             <widget class="QLabel" name="labelSystemSettings">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+@@ -238,7 +216,7 @@
+                <string notr="true">color: rgb(30, 43, 51)</string>
+               </property>
+               <property name="text">
+-               <string>Go to your Smolt page and rate your hardware components.</string>
++               <string>Configuration tools for Chakra, such as the display settings, firewall, keyboard layout, user management...</string>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+@@ -254,30 +232,51 @@
+               </property>
+              </widget>
+             </item>
+-            <item row="0" column="0">
+-             <widget class="QLabel" name="label_5">
++            <item row="0" column="3">
++             <widget class="QPushButton" name="buttonSystemSettings">
++              <property name="sizePolicy">
++               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
++                <horstretch>0</horstretch>
++                <verstretch>0</verstretch>
++               </sizepolicy>
++              </property>
+               <property name="minimumSize">
+                <size>
+-                <width>64</width>
+-                <height>64</height>
++                <width>180</width>
++                <height>25</height>
+                </size>
+               </property>
+-              <property name="maximumSize">
+-               <size>
+-                <width>64</width>
+-                <height>64</height>
+-               </size>
++              <property name="font">
++               <font>
++                <family>Sans Serif</family>
++                <pointsize>10</pointsize>
++                <weight>50</weight>
++                <bold>false</bold>
++               </font>
++              </property>
++              <property name="styleSheet">
++               <string notr="true">color: rgb(30, 43, 51)</string>
+               </property>
+               <property name="text">
+-               <string/>
++               <string>System Settings</string>
+               </property>
+-              <property name="pixmap">
+-               <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/view-pim-contacts.png</pixmap>
++             </widget>
++            </item>
++            <item row="0" column="2">
++             <spacer name="horizontalSpacer">
++              <property name="orientation">
++               <enum>Qt::Horizontal</enum>
+               </property>
+-              <property name="scaledContents">
+-               <bool>false</bool>
++              <property name="sizeType">
++               <enum>QSizePolicy::Fixed</enum>
+               </property>
+-             </widget>
++              <property name="sizeHint" stdset="0">
++               <size>
++                <width>30</width>
++                <height>20</height>
++               </size>
++              </property>
++             </spacer>
+             </item>
+            </layout>
+           </widget>
+@@ -285,15 +284,15 @@
+         </layout>
+        </item>
+        <item>
+-        <layout class="QVBoxLayout" name="verticalLayout_4">
++        <layout class="QVBoxLayout" name="verticalLayout_5">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+-          <widget class="QLabel" name="label_3">
++          <widget class="QLabel" name="label_4">
+            <property name="font">
+             <font>
+-             <family>URW Gothic L</family>
++             <family>DejaVu Sans</family>
+              <pointsize>9</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+@@ -308,7 +307,7 @@
+ border-top-right-radius: 4px;</string>
+            </property>
+            <property name="text">
+-            <string>System Settings</string>
++            <string>Help and Support</string>
+            </property>
+            <property name="margin">
+             <number>5</number>
+@@ -316,19 +315,17 @@
+           </widget>
+          </item>
+          <item>
+-          <widget class="QGroupBox" name="groupBox">
++          <widget class="QGroupBox" name="groupBox_2">
+            <property name="font">
+             <font>
+              <family>Sans Serif</family>
+              <pointsize>11</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+-             <underline>false</underline>
+-             <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="styleSheet">
+-            <string notr="true">#groupBox{
++            <string notr="true">#groupBox_2{
+ background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));
+ border: 1px solid rgba(255,255,255,50);
+ border-bottom-left-radius: 4px;
+@@ -338,37 +335,15 @@
+            <property name="title">
+             <string/>
+            </property>
+-           <property name="alignment">
+-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+-           </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+-           <property name="checkable">
+-            <bool>false</bool>
+-           </property>
+-           <layout class="QGridLayout" name="gridLayout_3">
++           <layout class="QGridLayout" name="gridLayout_4">
+             <property name="margin">
+              <number>10</number>
+             </property>
+-            <item row="0" column="2">
+-             <spacer name="horizontalSpacer">
+-              <property name="orientation">
+-               <enum>Qt::Horizontal</enum>
+-              </property>
+-              <property name="sizeType">
+-               <enum>QSizePolicy::Fixed</enum>
+-              </property>
+-              <property name="sizeHint" stdset="0">
+-               <size>
+-                <width>30</width>
+-                <height>20</height>
+-               </size>
+-              </property>
+-             </spacer>
+-            </item>
+             <item row="0" column="1">
+-             <widget class="QLabel" name="labelSystemSettings">
++             <widget class="QLabel" name="labelHelpPages">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+@@ -391,7 +366,7 @@
+                <string notr="true">color: rgb(30, 43, 51)</string>
+               </property>
+               <property name="text">
+-               <string>Configuration tools for Pardus such as the display, firewall, keyboard, user manager...</string>
++               <string>Chakra community: mailing lists, chat rooms, Wiki documents, help and support pages...</string>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+@@ -407,8 +382,24 @@
+               </property>
+              </widget>
+             </item>
++            <item row="0" column="2">
++             <spacer name="horizontalSpacer_2">
++              <property name="orientation">
++               <enum>Qt::Horizontal</enum>
++              </property>
++              <property name="sizeType">
++               <enum>QSizePolicy::Fixed</enum>
++              </property>
++              <property name="sizeHint" stdset="0">
++               <size>
++                <width>30</width>
++                <height>20</height>
++               </size>
++              </property>
++             </spacer>
++            </item>
+             <item row="0" column="3">
+-             <widget class="QPushButton" name="buttonSystemSettings">
++             <widget class="QPushButton" name="buttonHelpPages">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+@@ -433,12 +424,12 @@
+                <string notr="true">color: rgb(30, 43, 51)</string>
+               </property>
+               <property name="text">
+-               <string>System Settings</string>
++               <string>Help and Support</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+-             <widget class="QLabel" name="label_6">
++             <widget class="QLabel" name="label_8">
+               <property name="minimumSize">
+                <size>
+                 <width>64</width>
+@@ -455,7 +446,7 @@
+                <string/>
+               </property>
+               <property name="pixmap">
+-               <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/preferences-system.png</pixmap>
++               <pixmap resource="../data/kapudan.qrc">:/raw/pixmap/system-help.png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>false</bool>
+@@ -468,15 +459,15 @@
+         </layout>
+        </item>
+        <item>
+-        <layout class="QVBoxLayout" name="verticalLayout_5">
++        <layout class="QVBoxLayout" name="verticalLayout_6">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+-          <widget class="QLabel" name="label_4">
++          <widget class="QLabel" name="label_5">
+            <property name="font">
+             <font>
+-             <family>URW Gothic L</family>
++             <family>DejaVu Sans</family>
+              <pointsize>9</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+@@ -491,7 +482,7 @@
+ border-top-right-radius: 4px;</string>
+            </property>
+            <property name="text">
+-            <string>Help and Support</string>
++            <string>Using KDE</string>
+            </property>
+            <property name="margin">
+             <number>5</number>
+@@ -499,17 +490,22 @@
+           </widget>
+          </item>
+          <item>
+-          <widget class="QGroupBox" name="groupBox_2">
++          <widget class="QGroupBox" name="groupBox_3">
+            <property name="font">
+             <font>
+              <family>Sans Serif</family>
+              <pointsize>11</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
++             <underline>false</underline>
++             <strikeout>false</strikeout>
+             </font>
+            </property>
++           <property name="acceptDrops">
++            <bool>false</bool>
++           </property>
+            <property name="styleSheet">
+-            <string notr="true">#groupBox_2{
++            <string notr="true">#groupBox_3{
+ background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));
+ border: 1px solid rgba(255,255,255,50);
+ border-bottom-left-radius: 4px;
+@@ -519,15 +515,21 @@
+            <property name="title">
+             <string/>
+            </property>
++           <property name="alignment">
++            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
++           </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+-           <layout class="QGridLayout" name="gridLayout_4">
++           <property name="checkable">
++            <bool>false</bool>
++           </property>
++           <layout class="QGridLayout" name="gridLayout_9">
+             <property name="margin">
+              <number>10</number>
+             </property>
+             <item row="0" column="1">
+-             <widget class="QLabel" name="labelHelpPages">
++             <widget class="QLabel" name="labelSystemSettings_5">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+@@ -550,7 +552,7 @@
+                <string notr="true">color: rgb(30, 43, 51)</string>
+               </property>
+               <property name="text">
+-               <string>Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages...</string>
++               <string>Learn how to get the most out of KDE, the Plasma desktop, and everything else Chakra has to offer, in the Chakra Beginner's Guide.</string>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+@@ -566,24 +568,33 @@
+               </property>
+              </widget>
+             </item>
+-            <item row="0" column="2">
+-             <spacer name="horizontalSpacer_2">
+-              <property name="orientation">
+-               <enum>Qt::Horizontal</enum>
+-              </property>
+-              <property name="sizeType">
+-               <enum>QSizePolicy::Fixed</enum>
++            <item row="0" column="0">
++             <widget class="QLabel" name="label_12">
++              <property name="minimumSize">
++               <size>
++                <width>64</width>
++                <height>64</height>
++               </size>
+               </property>
+-              <property name="sizeHint" stdset="0">
++              <property name="maximumSize">
+                <size>
+-                <width>30</width>
+-                <height>20</height>
++                <width>64</width>
++                <height>64</height>
+                </size>
+               </property>
+-             </spacer>
++              <property name="text">
++               <string/>
++              </property>
++              <property name="pixmap">
++               <pixmap resource="../data/kapudan.qrc">:/raw/pixmap/preferences-system.png</pixmap>
++              </property>
++              <property name="scaledContents">
++               <bool>false</bool>
++              </property>
++             </widget>
+             </item>
+             <item row="0" column="3">
+-             <widget class="QPushButton" name="buttonHelpPages">
++             <widget class="QPushButton" name="buttonBeginnersGuide">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+@@ -608,34 +619,25 @@
+                <string notr="true">color: rgb(30, 43, 51)</string>
+               </property>
+               <property name="text">
+-               <string>Help and Support</string>
++               <string>Beginner's Guide</string>
+               </property>
+              </widget>
+             </item>
+-            <item row="0" column="0">
+-             <widget class="QLabel" name="label_8">
+-              <property name="minimumSize">
+-               <size>
+-                <width>64</width>
+-                <height>64</height>
+-               </size>
++            <item row="0" column="2">
++             <spacer name="horizontalSpacer_6">
++              <property name="orientation">
++               <enum>Qt::Horizontal</enum>
+               </property>
+-              <property name="maximumSize">
++              <property name="sizeType">
++               <enum>QSizePolicy::Fixed</enum>
++              </property>
++              <property name="sizeHint" stdset="0">
+                <size>
+-                <width>64</width>
+-                <height>64</height>
++                <width>30</width>
++                <height>20</height>
+                </size>
+               </property>
+-              <property name="text">
+-               <string/>
+-              </property>
+-              <property name="pixmap">
+-               <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/system-help.png</pixmap>
+-              </property>
+-              <property name="scaledContents">
+-               <bool>false</bool>
+-              </property>
+-             </widget>
++             </spacer>
+             </item>
+            </layout>
+           </widget>
+@@ -643,6 +645,54 @@
+         </layout>
+        </item>
+        <item>
++        <widget class="QGroupBox" name="groupBox_4">
++         <property name="font">
++          <font>
++           <family>Sans Serif</family>
++           <pointsize>11</pointsize>
++           <weight>75</weight>
++           <bold>true</bold>
++           <underline>false</underline>
++           <strikeout>false</strikeout>
++          </font>
++         </property>
++         <property name="acceptDrops">
++          <bool>false</bool>
++         </property>
++         <property name="styleSheet">
++          <string notr="true">#groupBox_4{
++background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));
++border: 1px solid rgba(255,255,255,50);
++border-radius: 4px;
++}</string>
++         </property>
++         <property name="title">
++          <string/>
++         </property>
++         <property name="alignment">
++          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
++         </property>
++         <property name="flat">
++          <bool>true</bool>
++         </property>
++         <property name="checkable">
++          <bool>false</bool>
++         </property>
++         <layout class="QGridLayout" name="gridLayout_10">
++          <property name="margin">
++           <number>10</number>
++          </property>
++          <item row="0" column="0">
++           <widget class="QCheckBox" name="autostart">
++            <property name="text">
++             <string>Run Kapudan on system startup?</string>
++            </property>
++           </widget>
++          </item>
++         </layout>
++        </widget>
++       </item>
++       <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+@@ -665,7 +715,7 @@
+   </layout>
+  </widget>
+  <resources>
+-  <include location="../data/kaptan.qrc"/>
++  <include location="../data/kapudan.qrc"/>
+  </resources>
+  <connections/>
+ </ui>

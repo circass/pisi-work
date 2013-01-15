@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>packageWidget</class>
- <widget class="QWidget" name="packageWidget">
+ <class>servicesWidget</class>
+ <widget class="QWidget" name="servicesWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Packages</string>
+   <string>Services</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -60,7 +60,7 @@ border-bottom-right-radius: 4px;
          <number>10</number>
         </property>
         <item>
-         <widget class="QCheckBox" name="showTray">
+         <widget class="QCheckBox" name="enableCups">
           <property name="font">
            <font>
             <family>Sans Serif</family>
@@ -71,54 +71,25 @@ border-bottom-right-radius: 4px;
            <string notr="true">color: rgb(30, 43, 51)</string>
           </property>
           <property name="text">
-           <string>Show updates in the system tray</string>
+           <string>cups: The Common Unix Printing Service</string>
           </property>
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QCheckBox" name="checkUpdate">
-            <property name="font">
-             <font>
-              <family>Sans Serif</family>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(30, 43, 51)</string>
-            </property>
-            <property name="text">
-             <string>Check updates automatically every</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QSpinBox" name="updateInterval">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="font">
-             <font>
-              <family>Sans Serif</family>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(30, 43, 51)</string>
-            </property>
-            <property name="suffix">
-             <string> hours</string>
-            </property>
-            <property name="minimum">
-             <number>2</number>
-            </property>
-            <property name="value">
-             <number>2</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <widget class="QCheckBox" name="enableBluetooth">
+          <property name="font">
+           <font>
+            <family>Sans Serif</family>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(30, 43, 51)</string>
+          </property>
+          <property name="text">
+           <string>bluetooth: Enable Bluetooth communication</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -154,7 +125,7 @@ border-bottom-right-radius: 4px;
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/applications-other.png</pixmap>
+        <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/preferences-services.png</pixmap>
        </property>
       </widget>
      </item>
@@ -179,7 +150,7 @@ border-bottom-right-radius: 4px;
         <enum>QFrame::Raised</enum>
        </property>
        <property name="text">
-        <string>To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates.</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;By default, new installations of Pardus have only a bare minimum of required services (also called &amp;quot;daemons&amp;quot;) enabled. Not only does this reflect Pardus's principle of not making decisions for its users, it also adds to a new installation's security, by decreasing the number of active services that might be vulnerable to an attack.&lt;/p&gt;&lt;p&gt;If you wish, you can use the options below to tell some of the more widely used daemons to start automatically at boot time. To enable any service you would like to start on bootup, you can run &lt;span style=&quot; font-weight:600;&quot;&gt;sudo systemctl enable &lt;/span&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;daemon-name&lt;/span&gt;. Respectively, run &lt;span style=&quot; font-weight:600;&quot;&gt;sudo systemctl disable &lt;/span&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;daemon-name&lt;/span&gt; to disable it. Or, if you just want to start daemons manually, try &lt;span style=&quot; font-weight:600;&quot;&gt;sudo systemctl start &lt;/span&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;daemon-name&lt;/span&gt;. (Eg, &lt;span style=&quot; font-weight:600;&quot;&gt;sudo systemctl start cups&lt;/span&gt;).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
@@ -242,7 +213,7 @@ border-top-left-radius: 4px;
 border-top-right-radius: 4px;</string>
      </property>
      <property name="text">
-      <string>Updates</string>
+      <string>Daemons to start at boot time</string>
      </property>
      <property name="margin">
       <number>5</number>
@@ -253,6 +224,7 @@ border-top-right-radius: 4px;</string>
  </widget>
  <resources>
   <include location="../data/kaptan.qrc"/>
+  <include location="../../../../.designer/data/kaptan.qrc"/>
  </resources>
  <connections/>
 </ui>

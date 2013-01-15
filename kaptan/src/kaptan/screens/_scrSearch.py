@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 #
+# Copyright (C) 2012, The Chakra Developers
+#
+# This is a fork of Pardus's Kaptan, which is
 # Copyright (C) 2005-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
@@ -17,37 +20,27 @@ from PyKDE4.kdecore import ki18n, KConfig, KProcess
 
 from PyKDE4 import kdeui
 
-from kaptan.screen import Screen
-from kaptan.screens.ui_scrPackage import Ui_packageWidget
+from kapudan.screen import Screen
+from kapudan.screens.ui_scrSearch import Ui_searchWidget
 
 import subprocess
 
-isUpdateOn = False
-
 class Widget(QtGui.QWidget, Screen):
-    title = ki18n("Packages")
-    desc = ki18n("Install / Remove Programs")
-
-    # min update time
-    updateTime = 12
+    title = ki18n("Search")
+    desc = ki18n("Enable / Disable Strigi Desktop Search")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
-        self.ui = Ui_packageWidget()
+        self.ui = Ui_searchWidget()
         self.ui.setupUi(self)
 
-        # set updateTime
-        self.ui.updateInterval.setValue(self.updateTime)
-
-        # set initial checkbox visibility
-        self.ui.checkUpdate.setVisible(False)
-        self.ui.updateInterval.setVisible(False)
+        # set initial states
+        self.ui.checkBoxNepomuk.setChecked(True)
 
         # set signals
-        self.ui.showTray.connect(self.ui.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
-        self.ui.checkUpdate.connect(self.ui.checkUpdate, SIGNAL("toggled(bool)"), self.updateSelected)
+        self.ui.checkBoxNepomuk.connect(self.ui.checkBoxNepomuk, SIGNAL("toggled(bool)"), self.enableSearch)
 
-    def enableCheckTime(self):
+    def enableSearch(self):
         if self.ui.showTray.isChecked():
             self.ui.checkUpdate.setVisible(True)
             self.ui.updateInterval.setVisible(True)
@@ -58,20 +51,22 @@ class Widget(QtGui.QWidget, Screen):
             self.ui.updateInterval.setVisible(False)
 
     def updateSelected(self):
-        if self.ui.checkUpdate.isChecked():
-            self.ui.updateInterval.setEnabled(True)
-        else:
-            self.ui.updateInterval.setEnabled(False)
+        #if self.ui.checkUpdate.isChecked():
+        #    self.ui.updateInterval.setEnabled(True)
+        #else:
+        #    self.ui.updateInterval.setEnabled(False)
+        # TODO: Where are Nepomuk/Strigi settings stored?
+        print "This part still needs to be written."
 
     def applySettings(self):
         # write selected configurations to future package-managerrc
         config = PMConfig()
-        config.setSystemTray(QVariant(self.ui.showTray.isChecked()))
-        config.setUpdateCheck(QVariant(self.ui.checkUpdate.isChecked()))
-        config.setUpdateCheckInterval(QVariant(self.ui.updateInterval.value() * 60))
+        #config.setSystemTray(QVariant(self.ui.showTray.isChecked()))
+        #config.setUpdateCheck(QVariant(self.ui.checkUpdate.isChecked()))
+        #config.setUpdateCheckInterval(QVariant(self.ui.updateInterval.value() * 60))
 
-        if self.ui.showTray.isChecked():
-            p = subprocess.Popen(["package-manager"], stdout=subprocess.PIPE)
+        #if self.ui.showTray.isChecked():
+        #    p = subprocess.Popen(["spun"], stdout=subprocess.PIPE)
 
     def shown(self):
         pass

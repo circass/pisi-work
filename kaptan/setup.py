@@ -166,7 +166,6 @@ setup(
       description       = unicode(about.description),
       license           = unicode(about.license),
       author            = "",
-      author_email      = about.bugEmail,
       url               = about.homePage,
       packages          = [''],
       package_dir       = {'': ''},

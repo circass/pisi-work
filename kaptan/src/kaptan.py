@@ -14,6 +14,7 @@ from kaptan.screens.ui_kaptan import Ui_kaptan
 from kaptan.tools import tools
 from kaptan.tools.progress_pie import DrawPie
 from kaptan.tools.kaptan_menu import Menu
+from kaptan.tools.spunrc import SpunRC
 
 class Kaptan(QtGui.QWidget):
     def __init__(self, parent = None):
@@ -39,7 +40,7 @@ class Kaptan(QtGui.QWidget):
         self.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
         self.connect(self.ui.buttonApply, QtCore.SIGNAL("clicked()"), self.slotNext)
         self.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
-        self.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
+        self.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), self.slotCleanup)
         self.connect(self.ui.buttonCancel, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
 
     def initializeUI(self):
@@ -80,20 +81,20 @@ class Kaptan(QtGui.QWidget):
         otherScreens = list((set(allScreens) - set(headScreens)) - set(tailScreens))
         otherScreens.remove(scrKeyboard)
         otherScreens.remove(scrPackage)
-        otherScreens.remove(scrSmolt)
+        otherScreens.remove(scrServices)
+        otherScreens.remove(scrSecurity)
 
         screens.extend(headScreens)
         screens.extend(otherScreens)
 
-        # Append other screens depending on the following cases
-        if tools.isLiveCD():
-            screens.append(scrKeyboard)
+        screens.append(scrKeyboard)
 
-        else:
+        spun = SpunRC()
+        if spun.isInstalled():
             screens.append(scrPackage)
 
-            if not tools.smoltProfileSent():
-                screens.append(scrSmolt)
+        screens.append(scrServices)
+        screens.append(scrSecurity)
 
         screens.extend(tailScreens)
 
@@ -212,6 +213,11 @@ class Kaptan(QtGui.QWidget):
     def isBackEnabled(self):
         return self.buttonBack.isEnabled()
 
+    def slotCleanup(self):
+        _w = self.ui.mainStack.currentWidget()
+        if _w.execute():
+            self.close()
+
     def __del__(self):
         group = self.kaptanConfig.group("General")
         group.writeEntry("RunOnStart", "False")
@@ -223,13 +229,13 @@ if __name__ == "__main__":
     version     = "5.0.1"
     description = ki18n("Kaptan lets you configure your Pardus workspace at first login")
     license     = KAboutData.License_GPL
-    copyright   = ki18n("(c) 2011 Pardus")
+    copyright   = ki18n("(c) 2013 Pardus-Anka")
     text        = ki18n("none")
-    homePage    = "http://developer.pardus.org.tr/projects/kaptan"
-    bugEmail    = "renan@pardus.org.tr"
+    homePage    = "https://github.com/pardus-anka"
+    bugTasks    = "http://anka.pardus-linux.org/"
 
     aboutData   = KAboutData(appName,catalog, programName, version, description,
-                                license, copyright,text, homePage, bugEmail)
+                                license, copyright,text, homePage)
 
     KCmdLineArgs.init(sys.argv, aboutData)
     app =  kdeui.KApplication()

@@ -18,7 +18,6 @@ import subprocess, sys
 
 from kaptan.screen import Screen
 from kaptan.screens.ui_scrGoodbye import Ui_goodbyeWidget
-import kaptan.screens.scrSmolt as smoltWidget
 
 class Widget(QtGui.QWidget, Screen):
     title = ki18n("More")
@@ -35,7 +34,6 @@ class Widget(QtGui.QWidget, Screen):
         else:
             self.helpPageUrl = "http://www.pardus-anka.org/"
 
-        self.smoltUrl = "http://smolt.pardus.org.tr:8090"
 
     def on_buttonSystemSettings_clicked(self):
         self.procSettings = QProcess()
@@ -50,15 +48,6 @@ class Widget(QtGui.QWidget, Screen):
         self.procSettings = QProcess()
         command = "kfmclient openURL " + self.smoltUrl
         self.procSettings.start(command)
-
-    def setSmolt(self):
-        if not self.smoltSettings["profileSend"]:
-            self.ui.smoltGroupBox.hide()
-            self.ui.label.hide()
-
-    def shown(self):
-       self.smoltSettings = smoltWidget.Widget.screenSettings
-       self.setSmolt()
 
     def execute(self):
        return True

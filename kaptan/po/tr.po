@@ -244,7 +244,7 @@ msgstr "Temalar"
 
 #: .tmp/scrStyle.py:38
 msgid "Customize Your Desktop"
-msgstr "Masaüstünüzü Kişiselleştirin"
+msgstr "Masaüstünizi Kişiselleşitirin"
 
 #: .tmp/scrSummary.py:35 .tmp/ui_scrSummary.py:85
 msgid "Summary"
@@ -471,8 +471,8 @@ msgid "Check updates automatically every"
 msgstr "Güncellemeleri kontrol etme sıklığı"
 
 #: .tmp/ui_scrPackage.py:135
-msgid " minute(s)"
-msgstr " dakika"
+msgid " hours"
+msgstr " saat"
 
 #: .tmp/ui_scrPackage.py:136
 msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
