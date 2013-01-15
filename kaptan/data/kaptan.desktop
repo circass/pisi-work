@@ -1,0 +1,33 @@
+[Desktop Entry]
+Exec=kaptan
+Icon=kaptan
+Type=Application
+
+X-KDE-StartupNotify=true
+X-KDE-autostart-after=plasma-desktop
+X-KDE-autostart-condition=kaptanrc:General:RunOnStart:true
+
+Name=Kaptan
+Name[az]=Kaptan
+Name[de]=Kaptan
+Name[es]=Kaptan
+Name[fr]=Kaptan
+Name[hu]=Kaptan
+Name[it]=Kaptan
+Name[nl]=Kaptan
+Name[pt_BR]=Kaptan
+Name[ru]=Kaptan
+Name[sv]=Kaptan
+Name[tr]=Kaptan
+GenericName=Welcome Wizard
+GenericName[de]=Willkommens-Assistent
+GenericName[es]=Asistente de Bienvenida
+GenericName[fr]=Assistant de bienvenue
+GenericName[hu]=Első Indítás Varázsló
+GenericName[it]=Benvenuto nel Wizard di Kaptan :)
+GenericName[nl]=Welkomassistent
+GenericName[pt_BR]=Assistente de Boas-Vindas
+GenericName[ru]=Мастер приветствия
+GenericName[sv]=Välkomstguide
+GenericName[tr]=Sihirbaza hoşgeldiniz
+
