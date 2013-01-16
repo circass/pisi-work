@@ -222,7 +222,7 @@ if __name__ == "__main__":
     license     = KAboutData.License_GPL
     copyright   = ki18n("(c) 2011 Pardus")
     text        = ki18n("none")
-    homePage    = "http://www.pardus-anka.org/"
+    homePage    = "http://www.pardus-anka.org"
     bugEmail    = "pisiciftligi@pardus-linux.org"
 
     aboutData   = KAboutData(appName,catalog, programName, version, description,
