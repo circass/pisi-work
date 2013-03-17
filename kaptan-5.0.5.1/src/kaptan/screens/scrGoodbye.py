@@ -31,9 +31,9 @@ class Widget(QtGui.QWidget, Screen):
 
         lang = KGlobal.locale().language()
         if lang == "tr":
-            self.helpPageUrl = "http://www.pardus-anka.org"
+            self.helpPageUrl = "http://www.pisilinux.org"
         else:
-            self.helpPageUrl = "http://worldforum.pardus-linux.nl"
+            self.helpPageUrl = "http://www.pisilinuxworld.org"
 
         self.smoltUrl = "http://smolt.pardus.org.tr:8090"
 

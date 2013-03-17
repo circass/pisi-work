@@ -11,7 +11,7 @@
 #
 
 import sys
-import pardus.netutils
+import pisilinux.netutils
 
 from PyQt4 import QtGui
 from PyQt4 import QtCore
@@ -29,7 +29,7 @@ class Widget(QtGui.QWidget, Screen):
     screenSettings["profileSend"] = False
 
     title = kdecore.ki18n("Smolt")
-    desc = kdecore.ki18n("Help Pardus Improve!")
+    desc = kdecore.ki18n("Help Pisi Linux Improve!")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
@@ -137,7 +137,7 @@ class Widget(QtGui.QWidget, Screen):
         return self.sendable_host_labels
 
     def disableSend(self):
-        if pardus.netutils.waitNet(3):
+        if pisilinux.netutils.waitNet(3):
             self.ui.checkBox.setEnabled(True)
 
     def shown(self):

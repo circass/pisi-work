@@ -221,12 +221,12 @@ if __name__ == "__main__":
     catalog     = ""
     programName = ki18n("kaptan")
     version     = "5.0.1"
-    description = ki18n("Kaptan lets you configure your Pardus workspace at first login")
+    description = ki18n("Kaptan lets you configure your Pisi Linux workspace at first login")
     license     = KAboutData.License_GPL
-    copyright   = ki18n("(c) 2011 Pardus")
+    copyright   = ki18n("(c) 2013 Pisi Linux")
     text        = ki18n("none")
-    homePage    = "http://www.pardus-anka.org"
-    bugEmail    = "pisiciftligi@pardus-linux.org"
+    homePage    = "http://www.pisilinux.org/"
+    bugEmail    = "admins@pisilinux.org"
 
     aboutData   = KAboutData(appName,catalog, programName, version, description,
                                 license, copyright,text, homePage, bugEmail)

@@ -27,7 +27,7 @@ def loadScreens(screensPath, globals):
         globals[screenName] = importScreen("kaptan.screens." + screenName)
 
 def isLiveCD():
-    return os.path.exists('/var/run/pardus/livemedia')
+    return os.path.exists('/var/run/pisilinux/livemedia')
 
 def getRelease():
     p = subprocess.Popen(["lsb_release", "-irs"], stdout=subprocess.PIPE)
@@ -53,7 +53,7 @@ def startPlasma(self):
 
 def smoltProfileSent():
     ''' Do not show smolt screen if profile was already sended.'''
-    smolt_uuid_path = "/etc/smolt/pub-uuid-smolt.pardus.org.tr"
+    smolt_uuid_path = "/etc/smolt/pub-uuid-smolt.pisilinux.org"
 
     if os.path.exists(smolt_uuid_path):
         if os.path.getsize(smolt_uuid_path) > 0:

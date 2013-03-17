@@ -21,7 +21,7 @@ from kaptan.screens.ui_scrKeyboard import Ui_keyboardWidget
 
 import subprocess
 
-from pardus import localedata
+from pisilinux import localedata
 
 class Widget(QtGui.QWidget, Screen):
     screenSettings = {}
