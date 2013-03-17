@@ -6,7 +6,7 @@
 # Korostil Daniel <ted.korostiled@gmail.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: Pardus-Anka\n"
+"Project-Id-Version: Pisi Linux\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-14 15:16+0200\n"
 "PO-Revision-Date: 2013-01-04 22:11+0000\n"
@@ -23,7 +23,7 @@ msgid "Kaptan"
 msgstr "Kaptan"
 
 #: .tmp/ui_kaptan.py:358
-msgid "Welcome to Pardus"
+msgid "Welcome to Pisi Linux"
 msgstr "Ласкаво просимо"
 
 #: .tmp/ui_kaptan.py:359
@@ -51,8 +51,8 @@ msgid "Smolt"
 msgstr "Smolt"
 
 #: .tmp/scrSmolt.py:32
-msgid "Help Pardus Improve!"
-msgstr "Допоможіть покращити Pardus!"
+msgid "Help Pisi Linux Improve!"
+msgstr "Допоможіть покращити Pisi Linux!"
 
 #: .tmp/scrSmolt.py:68
 msgid "Label"
@@ -172,9 +172,9 @@ msgstr "Теми"
 
 #: .tmp/ui_scrStyle.py:237
 msgid ""
-"Choose your favorite theme and desktop type. Customize Pardus with colorful "
+"Choose your favorite theme and desktop type. Customize Pisi Linux with colorful "
 "styles and themes."
-msgstr "Виберіть улюлену тему і тип стільниці. Облаштуйте Pardus кольоровими стилями і темами."
+msgstr "Виберіть улюлену тему і тип стільниці. Облаштуйте Pisi Linux кольоровими стилями і темами."
 
 #: .tmp/ui_scrStyle.py:238
 msgid "KDE Themes"
@@ -189,8 +189,8 @@ msgid "Oxygen - The official icon set of KDE"
 msgstr "Oxygen — офіційні піктограми KDE"
 
 #: .tmp/ui_scrStyle.py:243
-msgid "Milky - The official icon set of Pardus"
-msgstr "Milky — офіційні піктограми Pardus"
+msgid "Milky - The official icon set of Pisi Linux"
+msgstr "Milky — офіційні піктограми Pisi Linux"
 
 #: .tmp/ui_scrStyle.py:245
 msgid "Desktop Type"
@@ -224,8 +224,8 @@ msgstr "Підсумок"
 msgid ""
 "You have successfully finished all steps. Here's a summary of the settings "
 "you want to apply. Click <b>Apply Settings</b> to save them now. You are now"
-" ready to enjoy Pardus!"
-msgstr "Ви успішно використали усі кроки. Тут є підсумки налаштувань, які ви бажаєте застосувати. Нитисніть <b>Застосувати налаштування</b>, щоб їх зберегти. Тепер ви готові до використання Pardus!"
+" ready to enjoy Pisi Linux!"
+msgstr "Ви успішно використали усі кроки. Тут є підсумки налаштувань, які ви бажаєте застосувати. Нитисніть <b>Застосувати налаштування</b>, щоб їх зберегти. Тепер ви готові до використання Pisi Linux!"
 
 #: .tmp/ui_scrSummary.py:87
 msgid "The following settings will be applied"
@@ -297,9 +297,9 @@ msgstr "Стартове меню"
 
 #: .tmp/scrMenu.py:43
 msgid ""
-"Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts "
+"Kick-off menu is the default menu of Pisi Linux.<br><br>The program shortcuts "
 "are easy to access and well organized."
-msgstr "Стартове меню — типове меню Pardus.<br><br>Скорочення програми легкодоступні та добре організовані."
+msgstr "Стартове меню — типове меню Pisi Linux.<br><br>Скорочення програми легкодоступні та добре організовані."
 
 #: .tmp/scrMenu.py:47 .tmp/ui_scrMenu.py:126
 msgid "Simple Menu"
@@ -317,9 +317,9 @@ msgstr "Меню Lancelot"
 
 #: .tmp/scrMenu.py:55
 msgid ""
-"Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The "
+"Lancelot is an advanced and highly customizable menu for Pisi Linux.<br><br>The "
 "program shortcuts are easy to access and well organized."
-msgstr "Lancelot — розширене й гарно пристосоване меню для Pardus.<br><br>Скорочення програми легкодоступні та добре організовані."
+msgstr "Lancelot — розширене й гарно пристосоване меню для Pisi Linux.<br><br>Скорочення програми легкодоступні та добре організовані."
 
 #: .tmp/scrAvatar.py:36
 msgid "User Picture"
@@ -332,9 +332,9 @@ msgstr "Створіть свою користувацьку картинку"
 #: .tmp/ui_scrSmolt.py:155
 msgid ""
 "<b>Smolt</b> is a tool that collects the information in the following table "
-"and sends it to us for which lets us improve Pardus according to the user "
+"and sends it to us for which lets us improve Pisi Linux according to the user "
 "profile statistics."
-msgstr "<b>Smolt</b> — інструмент, який збирає інформацію з цих таблиць і відправляє нам, щоб ми могли покращити Pardus відповідно до статистики користувачів."
+msgstr "<b>Smolt</b> — інструмент, який збирає інформацію з цих таблиць і відправляє нам, щоб ми могли покращити Pisi Linux відповідно до статистики користувачів."
 
 #: .tmp/ui_scrSmolt.py:156 .tmp/ui_scrGoodbye.py:327 .tmp/ui_scrGoodbye.py:328
 msgid "My Smolt Page"
@@ -350,12 +350,12 @@ msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt will only send hardware and basic operating system information to the Pardus smolt server (smoon).  The only tie from the database to a submitters machine is the UUID.  As long as the submitter does not give out this UUID the submission is anonymous.  If at any point in time a user wants to delete their profile from the database they need only run</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt will only send hardware and basic operating system information to the Pisi Linux smolt server (smoon).  The only tie from the database to a submitters machine is the UUID.  As long as the submitter does not give out this UUID the submission is anonymous.  If at any point in time a user wants to delete their profile from the database they need only run</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-style:italic;\">smoltDeleteProfile</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   The information sent to the smolt database server should be considered public in that anyone can view the statistics, data and share machine profiles.  In  many ways smolt is designed to get hardware vendors and other 3rd parties attention.  As such, not only will this information be shared with 3rd parties, we will be using smolt as leverage to gain better support for open source drivers and better support in general.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">IP Logging:</span>  In Pardus's smolt install all web traffic goes through a proxy server first.  This is the only place IP addresses are being logged and they are kept on that server for a period of 4 weeks at which time log rotation removes these logs.  The Pardus Project does not aggregate ip addresses in the smolt database.  These logs are private and will not be available to the general public.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Users unhappy with this policy should simply not use smolt.  Users with questions about this policy should contact the Pardus Infrastructure Team at admin [at] pardus.org.tr  Also remember that users can delete their profiles at any time using &quot;<span style=\" font-style:italic;\">smoltDeleteProfile</span>&quot;</p></body></html>"
-msgstr "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt відправить лише інформацію про апаратуру і базові інформацію про операційну систему до сервера Pardus (smoon).  Зв'язок між базою даних і відправником — UUID.  Поки відправник не надасть цей UUID, відправлення анонімне.  Якщо користувач збажає вилучити згадку з бази даних, потрібно тільки виконати</p>\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-style:italic;\">Вилучити запис</span></p>\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Інформація повинна бути доступною, щоб будь-хто міг оглянути статистику, дані та подібні машини.  Переважно цей сервер створено для одержання інформації про виробників апаратури та інших третіх сторін.  І ця, і не лише ця інформація буде оприлюднена й третій стороні, ми будемо використовувати сервер як засіб для покращення підтримки відкритих драйверів і кращої підтримки загалом.</p>\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">Реєстрація через IP :</span>  У сервері Pardus установлено, що ввесь трафік іде спочатку через проксі-сервер.  Лише там реєструються адреси IP і вони зберігаються на сервері протягом чотирьох тижнів, після чого вони вилучаються з журналу.  Проект Pardus не збирає адреси IP у базі даних.  Цей реєстр приватний і недоступний сторонім особам.</p>\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Користувачі,  нераді такій політиці, повинні напросто не користуватись цим сервером.  Користувачі із запитаннями щодо цієї політики повинні з'єднатись з командою інфраструктури Pardus через admin [собачка] pardus.org.tr  Також не забувайте, що користувачі можуть вилучити свій запис у будь-який момент, скориставшись &quot;<span style=\" font-style:italic;\">Вилучити запис</span>&quot;</p></body></html>"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">IP Logging:</span>  In Pisi Linux's smolt install all web traffic goes through a proxy server first.  This is the only place IP addresses are being logged and they are kept on that server for a period of 4 weeks at which time log rotation removes these logs.  The Pisi Linux Project does not aggregate ip addresses in the smolt database.  These logs are private and will not be available to the general public.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Users unhappy with this policy should simply not use smolt.  Users with questions about this policy should contact the Pisi Linux Infrastructure Team at admin [at] pisilinux.org  Also remember that users can delete their profiles at any time using &quot;<span style=\" font-style:italic;\">smoltDeleteProfile</span>&quot;</p></body></html>"
+msgstr "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt відправить лише інформацію про апаратуру і базові інформацію про операційну систему до сервера Pisi Linux (smoon).  Зв'язок між базою даних і відправником — UUID.  Поки відправник не надасть цей UUID, відправлення анонімне.  Якщо користувач збажає вилучити згадку з бази даних, потрібно тільки виконати</p>\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-style:italic;\">Вилучити запис</span></p>\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Інформація повинна бути доступною, щоб будь-хто міг оглянути статистику, дані та подібні машини.  Переважно цей сервер створено для одержання інформації про виробників апаратури та інших третіх сторін.  І ця, і не лише ця інформація буде оприлюднена й третій стороні, ми будемо використовувати сервер як засіб для покращення підтримки відкритих драйверів і кращої підтримки загалом.</p>\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">Реєстрація через IP :</span>  У сервері Pisi Linux установлено, що ввесь трафік іде спочатку через проксі-сервер.  Лише там реєструються адреси IP і вони зберігаються на сервері протягом чотирьох тижнів, після чого вони вилучаються з журналу.  Проект Pisi Linux не збирає адреси IP у базі даних.  Цей реєстр приватний і недоступний сторонім особам.</p>\n<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Користувачі,  нераді такій політиці, повинні напросто не користуватись цим сервером.  Користувачі із запитаннями щодо цієї політики повинні з'єднатись з командою інфраструктури Pisi Linux через admin [собачка] pisilinux.org  Також не забувайте, що користувачі можуть вилучити свій запис у будь-який момент, скориставшись &quot;<span style=\" font-style:italic;\">Вилучити запис</span>&quot;</p></body></html>"
 
 #: .tmp/kaptan.desktop.in.h:2
 msgid "Welcome Wizard"
@@ -444,18 +444,18 @@ msgid "Welcome"
 msgstr "Ласкаво просимо"
 
 #: .tmp/ui_scrWelcome.py:78
-msgid "What is Pardus?"
-msgstr "Що таке Pardus?"
+msgid "What is Pisi Linux?"
+msgstr "Що таке Pisi Linux?"
 
 #: .tmp/ui_scrWelcome.py:79
 msgid ""
-"<b>Pardus</b> is a reliable, secure, fast and user friendly operating "
-"system. <br /><br />With Pardus, you can connect to the internet, read your "
+"<b>Pisi Linux</b> is a reliable, secure, fast and user friendly operating "
+"system. <br /><br />With Pisi Linux, you can connect to the internet, read your "
 "e-mails, work with your office documents, watch movies, play music, develop "
 "applications, play games and much more! <br /><br /><b>Kaptan</b> will help "
-"you personalize your Pardus workspace easily and quickly. Please click "
+"you personalize your Pisi Linux workspace easily and quickly. Please click "
 "<b>next</b> in order to begin."
-msgstr "<b>Pardus</b> — надійна, безпечна, шивдка і дружелюбна система. <br /><br />З Pardus ви зможете під'єднатись до інтернету, читати пошту, працювати з офісними документами, переглядати фільми, слухати музику, розробляти програми, бавитись ігри і багато-пребагато всього іншого! <br /><br /><b>Kaptan</b> допоможе вам усе це налаштувати під себе, щоб досягнути затишного робочого місця якнайпростіше і якнайшвидше. Будь ласка, натисніть <b>Далі</b>, щоб почати."
+msgstr "<b>Pisi Linux</b> — надійна, безпечна, шивдка і дружелюбна система. <br /><br />З Pisi Linux ви зможете під'єднатись до інтернету, читати пошту, працювати з офісними документами, переглядати фільми, слухати музику, розробляти програми, бавитись ігри і багато-пребагато всього іншого! <br /><br /><b>Kaptan</b> допоможе вам усе це налаштувати під себе, щоб досягнути затишного робочого місця якнайпростіше і якнайшвидше. Будь ласка, натисніть <b>Далі</b>, щоб почати."
 
 #: .tmp/ui_scrPackage.py:133
 msgid "Show updates in the system tray"
@@ -471,10 +471,10 @@ msgstr " годин"
 
 #: .tmp/ui_scrPackage.py:136
 msgid ""
-"To install and remove programs to Pardus, use Package-Manager. Package-"
+"To install and remove programs to Pisi Linux, use Package-Manager. Package-"
 "Manager also can automatically install the latest updates available. You can"
 " set the period for checking new updates."
-msgstr "Щоб установляти і вилучати програми в Pardus, використайте керування пакунками. Він також може автоматично встановлювати останні доступні оновлення. Ви можете вказати проміжок перевіряння."
+msgstr "Щоб установляти і вилучати програми в Pisi Linux, використайте керування пакунками. Він також може автоматично встановлювати останні доступні оновлення. Ви можете вказати проміжок перевіряння."
 
 #: .tmp/ui_scrPackage.py:137
 msgid "Updates"
@@ -540,10 +540,10 @@ msgstr "Вибрати шпалери"
 
 #: .tmp/ui_scrGoodbye.py:326
 msgid ""
-"<b>Your settings have been applied.</b> Now you can start enjoying Pardus or"
+"<b>Your settings have been applied.</b> Now you can start enjoying Pisi Linux or"
 " you can checkout the following links and applications for more settings or "
 "for help and support. Don't forget to <b>join our community!</b>"
-msgstr "<b>Ваші налаштування застосовано.</b> Тепер можете користуватись Pardus, або перевірити ці посилання та програми для подальших налаштувань, або звернутись по довідку та підтримку. Не забудьте <b>долучитись до нашої спільноти!</b>"
+msgstr "<b>Ваші налаштування застосовано.</b> Тепер можете користуватись Pisi Linux, або перевірити ці посилання та програми для подальших налаштувань, або звернутись по довідку та підтримку. Не забудьте <b>долучитись до нашої спільноти!</b>"
 
 #: .tmp/ui_scrGoodbye.py:329
 msgid "Go to your Smolt page and rate your hardware components."
@@ -555,9 +555,9 @@ msgstr "Системні параметри"
 
 #: .tmp/ui_scrGoodbye.py:331
 msgid ""
-"Configuration tools for Pardus such as the display, firewall, keyboard, user"
+"Configuration tools for Pisi Linux such as the display, firewall, keyboard, user"
 " manager..."
-msgstr "Інструмент налаштування для Pardus таких речей, як екран, мережева безпека, клавіатура, керування користувачами…"
+msgstr "Інструмент налаштування для Pisi Linux таких речей, як екран, мережева безпека, клавіатура, керування користувачами…"
 
 #: .tmp/ui_scrGoodbye.py:333 .tmp/ui_scrGoodbye.py:335
 msgid "Help and Support"
@@ -565,9 +565,9 @@ msgstr "Довідка і підтримка"
 
 #: .tmp/ui_scrGoodbye.py:334
 msgid ""
-"Pardus community, mailing lists, chat rooms, Wiki documents, help and "
+"Pisi Linux community, mailing lists, chat rooms, Wiki documents, help and "
 "support pages..."
-msgstr "Спільнота Pardus, список листування, кімнати балачок, документи Wiki, сторінка довідки і підтримки…"
+msgstr "Спільнота Pisi Linux, список листування, кімнати балачок, документи Wiki, сторінка довідки і підтримки…"
 
 #: .tmp/ui_scrMouse.py:203
 msgid ""
@@ -618,9 +618,9 @@ msgstr "Мова розкладки клавіатури"
 
 #: .tmp/ui_scrWallpaper.py:132
 msgid ""
-"Choose your favorite wallpaper for Pardus. Don't forget to check out "
+"Choose your favorite wallpaper for Pisi Linux. Don't forget to check out "
 "<b>Desktop Settings</b> for downloading new and cool wallpapers."
-msgstr "Виберіть улюблену шпалеру для Pardus. Не забудьте перевірити <b>Налаштування стільниці</b> для звантаження нових і гарних шпалерів. "
+msgstr "Виберіть улюблену шпалеру для Pisi Linux. Не забудьте перевірити <b>Налаштування стільниці</b> для звантаження нових і гарних шпалерів. "
 
 #: .tmp/ui_scrWallpaper.py:133
 msgid "Wallpapers"
