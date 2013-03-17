@@ -47,7 +47,7 @@
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>&lt;b&gt;Your settings have been applied.&lt;/b&gt; Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to &lt;b&gt;join our community!&lt;/b&gt;</string>
+      <string>&lt;b&gt;Your settings have been applied.&lt;/b&gt; Now you can start enjoying Pisi Linux or you can checkout the following links and applications for more settings or for help and support. Don't forget to &lt;b&gt;join our community!&lt;/b&gt;</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -391,7 +391,7 @@ border-bottom-right-radius: 4px;
                <string notr="true">color: rgb(30, 43, 51)</string>
               </property>
               <property name="text">
-               <string>Configuration tools for Pardus such as the display, firewall, keyboard, user manager...</string>
+               <string>Configuration tools for Pisi Linux such as the display, firewall, keyboard, user manager...</string>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -550,7 +550,7 @@ border-bottom-right-radius: 4px;
                <string notr="true">color: rgb(30, 43, 51)</string>
               </property>
               <property name="text">
-               <string>Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages...</string>
+               <string>Pisi Linux community, mailing lists, chat rooms, Wiki documents, help and support pages...</string>
               </property>
               <property name="scaledContents">
                <bool>true</bool>

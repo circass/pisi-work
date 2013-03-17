@@ -11,7 +11,7 @@
 #
 
 import sys
-import pisilinux.netutils
+import pardus.netutils
 
 from PyQt4 import QtGui
 from PyQt4 import QtCore
@@ -137,7 +137,7 @@ class Widget(QtGui.QWidget, Screen):
         return self.sendable_host_labels
 
     def disableSend(self):
-        if pisilinux.netutils.waitNet(3):
+        if pardus.netutils.waitNet(3):
             self.ui.checkBox.setEnabled(True)
 
     def shown(self):

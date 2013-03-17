@@ -73,7 +73,7 @@
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes.</string>
+      <string>Choose your favorite theme and desktop type. Customize Pisi Linux with colorful styles and themes.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -371,7 +371,7 @@ border-top-right-radius: 4px;</string>
           </item>
           <item>
            <property name="text">
-            <string>kfaenza - KDE4 icon set of Pardus Anka</string>
+            <string>kfaenza - KDE4 icon set of Pisi Linux</string>
            </property>
            <property name="toolTip">
             <string>kfaenza</string>

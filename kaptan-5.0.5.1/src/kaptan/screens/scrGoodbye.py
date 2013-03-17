@@ -35,7 +35,7 @@ class Widget(QtGui.QWidget, Screen):
         else:
             self.helpPageUrl = "http://www.pisilinuxworld.org"
 
-        self.smoltUrl = "http://smolt.pardus.org.tr:8090"
+        self.smoltUrl = "http://smolt.pisilinux.org:8090"
 
     def on_buttonSystemSettings_clicked(self):
         self.procSettings = QProcess()
