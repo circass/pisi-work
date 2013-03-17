@@ -1,6 +1,6 @@
 <RCC>
   <qresource prefix="raw">
-    <file>pixmap/milky.png</file>
+    <file>pixmap/kfaenza.png</file>
     <file>pixmap/oxygen.png</file>
     <file>pixmap/preferences-desktop-icons.png</file>
     <file>pixmap/tab-new-background.png</file>

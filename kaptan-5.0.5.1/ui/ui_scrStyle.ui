@@ -371,17 +371,17 @@ border-top-right-radius: 4px;</string>
           </item>
           <item>
            <property name="text">
-            <string>Milky - The official icon set of Pardus</string>
+            <string>kfaenza - KDE4 icon set of Pardus Anka</string>
            </property>
            <property name="toolTip">
-            <string>milky</string>
+            <string>kfaenza</string>
            </property>
            <property name="statusTip">
-            <string>milky</string>
+            <string>kfaenza</string>
            </property>
            <property name="icon">
             <iconset resource="../data/kaptan.qrc">
-             <normaloff>:/raw/pixmap/milky.png</normaloff>:/raw/pixmap/milky.png</iconset>
+             <normaloff>:/raw/pixmap/kfaenza.png</normaloff>:/raw/pixmap/kfaenza.png</iconset>
            </property>
           </item>
          </widget>

@@ -108,16 +108,13 @@ border-bottom-right-radius: 4px;
              <string notr="true">color: rgb(30, 43, 51)</string>
             </property>
             <property name="suffix">
-             <string> minute(s)</string>
+             <string> hours</string>
             </property>
             <property name="minimum">
-             <number>1</number>
-            </property>
-            <property name="maximum">
-             <number>10000</number>
+             <number>2</number>
             </property>
             <property name="value">
-             <number>1</number>
+             <number>2</number>
             </property>
            </widget>
           </item>
